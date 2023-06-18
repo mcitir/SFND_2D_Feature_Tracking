@@ -65,11 +65,13 @@ int main(int argc, const char *argv[])
         frame.cameraImg = imgGray;
         dataBuffer.push_back(frame);
         
+        // appy ring buffer based on predefined dataBufferSize 
         if (dataBuffer.size() > dataBufferSize)
         {
             dataBuffer.erase(dataBuffer.begin());
         }
 
+        // print out the size of dataBuffer allocated
         cout << "dataBuffer.size() = " << dataBuffer.size() << endl; 
 
         //// EOF STUDENT ASSIGNMENT
@@ -79,7 +81,15 @@ int main(int argc, const char *argv[])
 
         // extract 2D keypoints from current image
         vector<cv::KeyPoint> keypoints; // create empty feature list for current image
-        string detectorType = "SHITOMASI";
+
+        // The detectorType selection
+        // string detectorType = "SHITOMASI";
+        string detectorType = "HARRIS";
+        // string detectorType = "FAST";
+        // string detectorType = "BRISK";
+        // string detectorType = "ORB";
+        // string detectorType = "AKAZE";
+        // string detectorType = "SIFT";
 
         //// STUDENT ASSIGNMENT
         //// TASK MP.2 -> add the following keypoint detectors in file matching2D.cpp and enable string-based selection based on detectorType
@@ -89,10 +99,24 @@ int main(int argc, const char *argv[])
         {
             detKeypointsShiTomasi(keypoints, imgGray, false);
         }
+        else if (detectorType.compare("HARRIS") == 0)
+        {
+            detKeypointsHarris(keypoints, imgGray, bVis);
+        }
+        else if (detectorType.compare("FAST") == 0 ||
+                 detectorType.compare("BRISK") == 0 ||
+                 detectorType.compare("ORB") == 0 ||
+                 detectorType.compare("AKAZE") == 0 ||
+                 detectorType.compare("SIFT") == 0)
+        {
+            //detKeypointsModern(keypoints, imgGray, detectorType, false);
+        }
         else
         {
-            //...
+            throw invalid_argument("Please select a valid detectorType, "+detectorType+" is not valid");
         }
+
+
         //// EOF STUDENT ASSIGNMENT
 
         //// STUDENT ASSIGNMENT

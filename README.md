@@ -3,8 +3,8 @@
 ### Step1: Mid-Term Report
 |Success Criteria|Specifications|
 |---|---|
-| MP.0 Mid Term Report| Project Submission address: [Readme](https://github.com/mcitir/SFND_2D_Feature_Tracking/blob/main/README.md)|
-| MP.1 Data Buffer Optimization||
+| MP.0 Mid Term Report| <span style= "color:green">&#x2713;</span> Done:<br>[Readme](https://github.com/mcitir/SFND_2D_Feature_Tracking/blob/main/README.md)|
+| MP.1 Data Buffer Optimization| <span style= "color:green">&#x2713;</span> Done|
 | MP.2 Keypoint Detection||
 | MP.3 Keypoint Removal||
 | MP.4 Keypoint Descriptors||

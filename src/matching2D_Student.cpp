@@ -101,3 +101,94 @@ void detKeypointsShiTomasi(vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool b
         cv::waitKey(0);
     }
 }
+
+// Detect keypoints in image using the Harris detector
+void detKeypointsHarris(std::vector<cv::KeyPoint> &keypoints, cv::Mat &img, bool bVis)
+{
+    // Detector parameters
+    int blockSize = 2;     // for every pixel, a blockSize × blockSize neighborhood is considered
+    int apertureSize = 3;  // aperture parameter for Sobel operator (must be odd)
+    int minResponse = 100; // minimum value for a corner in the 8bit scaled response matrix
+    double k = 0.04;       // Harris parameter (see equation for details)
+
+    // Non-maximum suppression (NMS) settings
+    bool bNMS = true; // perform non-maximum suppression on keypoints
+    double maxOverlap = 0.0; // max. permissible overlap between two features in %, used during non-maximum suppression (NMS)
+
+    // Detect Harris corners and normalize output
+    double t = (double)cv::getTickCount();
+    cv::Mat dst, dst_norm, dst_norm_scaled;
+
+    dst = cv::Mat::zeros(img.size(), CV_32FC1);
+    cv::cornerHarris(img, dst, blockSize, apertureSize, k, cv::BORDER_DEFAULT);
+
+    // Normalize
+    cv::normalize(dst, dst_norm, 0, 255, cv::NORM_MINMAX, CV_32FC1, cv::Mat());
+
+    // Scale
+    cv::convertScaleAbs(dst_norm, dst_norm_scaled);
+
+    // Visualize results
+    if (bVis)
+    {
+        // Draw circles around detected corners
+        cv::Mat dst_norm_scaled_copy = dst_norm_scaled.clone();
+        for (int j = 0; j < dst_norm_scaled_copy.rows; j++)
+        {
+            for (int i = 0; i < dst_norm_scaled_copy.cols; i++)
+            {
+                if ((int)dst_norm_scaled_copy.at<uchar>(j, i) > minResponse)
+                {
+                    cv::circle(dst_norm_scaled_copy, cv::Point(i, j), 5, cv::Scalar(0), 2, 8, 0);
+                }
+            }
+        }
+
+        // Display results
+        string windowName = "Harris Corner Detector Results";
+        cv::namedWindow(windowName, 6);
+        imshow(windowName, dst_norm_scaled_copy);
+        cv::waitKey(0);
+    }
+
+    // Apply non-maximum suppression (NMS)
+    for (size_t j= 0; j < dst_norm.rows; j++)
+    {
+        for (size_t i = 0; i < dst_norm.cols; i++)
+        {
+            int response = (int)dst_norm.at<float>(j, i);
+
+            // Apply the minimum threshold for Harris cornerness response
+            if (response > minResponse)
+            {
+                // Only store points above a threshold
+                cv::KeyPoint newKeyPoint;
+                newKeyPoint.pt = cv::Point2f(i, j);
+                newKeyPoint.size = 2 * apertureSize;
+                newKeyPoint.response = response;
+
+                // Perform non-maximum suppression (NMS) in local neighbourhood around new key point
+                bool bOverlap = false;
+                for (auto it = keypoints.begin(); it != keypoints.end(); ++it)
+                {
+                    double kptOverlap = cv::KeyPoint::overlap(newKeyPoint, *it);
+                    if (kptOverlap > maxOverlap)
+                    {
+                        bOverlap = true;
+                        if (newKeyPoint.response > (*it).response)
+                        {
+                            // Replace old key point with new one
+                            *it = newKeyPoint;
+                            break;
+                        }
+                    }
+                }
+                if (!bOverlap)
+                {
+                    // Add new key point
+                    keypoints.push_back(newKeyPoint);
+                }
+            }
+        }
+    } 
+}
