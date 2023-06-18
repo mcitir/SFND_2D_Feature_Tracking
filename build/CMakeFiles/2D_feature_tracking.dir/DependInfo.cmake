@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/src/MidTermProject_Camera_Student.cpp" "CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o" "gcc" "CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o.d"
-  "/home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/src/matching2D_Student.cpp" "CMakeFiles/2D_feature_tracking.dir/src/matching2D_Student.cpp.o" "gcc" "CMakeFiles/2D_feature_tracking.dir/src/matching2D_Student.cpp.o.d"
+  "/home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/src/MidTermProject_Camera_Student.cpp" "CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o" "gcc" "CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o.d"
+  "/home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/src/matching2D_Student.cpp" "CMakeFiles/2D_feature_tracking.dir/src/matching2D_Student.cpp.o" "gcc" "CMakeFiles/2D_feature_tracking.dir/src/matching2D_Student.cpp.o.d"
   )
 
 # Targets to which this target links.

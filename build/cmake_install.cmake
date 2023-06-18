@@ -1,4 +1,4 @@
-# Install script for directory: /home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking
+# Install script for directory: /home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

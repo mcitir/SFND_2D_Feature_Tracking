@@ -1,5 +1,5 @@
 CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o: \
- /home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/src/MidTermProject_Camera_Student.cpp \
+ /home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/src/MidTermProject_Camera_Student.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -254,5 +254,5 @@ CMakeFiles/2D_feature_tracking.dir/src/MidTermProject_Camera_Student.cpp.o: \
  /usr/local/include/opencv4/opencv2/flann/config.h \
  /usr/local/include/opencv4/opencv2/xfeatures2d.hpp \
  /usr/local/include/opencv4/opencv2/xfeatures2d/nonfree.hpp \
- /home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/src/dataStructures.h \
- /home/mcitir/workspace/Udacity/SFND_2D_Feature_Tracking/src/matching2D.hpp
+ /home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/src/dataStructures.h \
+ /home/mcitir/workspace/Udacity/submission/SFND_2D_Feature_Tracking/src/matching2D.hpp
