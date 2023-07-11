@@ -10,12 +10,12 @@
 | MP.4 Keypoint Descriptors|<span style= "color:green">&#x2713;</span> Done|Codes updated|
 | MP.5 Descrriptor Matching|<span style= "color:green">&#x2713;</span> Done|Codes updated|
 | MP.6 Descriptor Distance Ratio|<span style= "color:green">&#x2713;</span> Done|Codes updated|
-| MP.7 Performance Evaluation 1|<span style= "color:green">&#x2713;</span> Done|[Section > MP.7](#mp7)|
-| MP.8 Performance Evaluation 2|<span style= "color:green">&#x2713;</span> Done|[Section > MP.8](#mp8)|
-| MP.9 Performance Evaluation 3|<span style= "color:green">&#x2713;</span> Done|[Section > MP.9](#mp9)|
+| MP.7 Performance Evaluation 1|<span style= "color:green">&#x2713;</span> Done|[Section > MP.7](#mp7-performance-evaluation-1)|
+| MP.8 Performance Evaluation 2|<span style= "color:green">&#x2713;</span> Done|[Section > MP.8](#mp8-performance-evaluation-2)|
+| MP.9 Performance Evaluation 3|<span style= "color:green">&#x2713;</span> Done|[Section > MP.9](#mp9-performance-evaluation-3)|
 
 
-#### MP.7 Performance Evaluation 1 {#mp7}
+#### MP.7 Performance Evaluation 1 {#mp7-performance-evaluation-1}
 |Detector|Average number of Keypoints|Average Time (ms)|
 |:------:|:-------------------------:|:---------------:|
 |SHITOMASI|117.9|8.52|
@@ -26,7 +26,7 @@
 |AKAZE|167|56.21|
 |SIFT|138.6|80.18|
 
-#### MP.8 Performance Evaluation 2 {#mp8}
+#### MP.8 Performance Evaluation 2 {#mp8-performance-evaluation-2}
 |Detector/Descriptor|Avg. # of Keypoints in ROI|Avg. # of Keypoints|
 |:-----------------:|:------------------------:|:-----------------:|
 |**SHITOMASI**      |                          |                   |
@@ -80,7 +80,7 @@
 |**_** + SIFT       |N/A|N/A|
 
 
-#### MP.9 Performance Evaluation 3  {#mp9}
+#### MP.9 Performance Evaluation 3  {#mp9-performance-evaluation-3}
 ##### Average Processing (Detection + Extraction) Time (ms)
 |Detector/Descriptor|BRISK|BRIEF|ORB|FREAK|AKAZE|SIFT|
 |---|---|---|---|---|---|---|
