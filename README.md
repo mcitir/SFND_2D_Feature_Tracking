@@ -5,14 +5,101 @@
 |---|---|
 | MP.0 Mid Term Report| <span style= "color:green">&#x2713;</span> Done:<br>[Readme](https://github.com/mcitir/SFND_2D_Feature_Tracking/blob/main/README.md)|
 | MP.1 Data Buffer Optimization| <span style= "color:green">&#x2713;</span> Done|
-| MP.2 Keypoint Detection||
-| MP.3 Keypoint Removal||
-| MP.4 Keypoint Descriptors||
-| MP.5 Descrriptor Matching||
-| MP.6 Descriptor Distance Ratio||
-| MP.7 Performance Evaluation 1||
-| MP.8 Performance Evaluation 2||
-| MP.9 Performance Evaluation 3||
+| MP.2 Keypoint Detection|<span style= "color:green">&#x2713;</span> Done|
+| MP.3 Keypoint Removal|<span style= "color:green">&#x2713;</span> Done|
+| MP.4 Keypoint Descriptors|<span style= "color:green">&#x2713;</span> Done|
+| MP.5 Descrriptor Matching|<span style= "color:green">&#x2713;</span> Done|
+| MP.6 Descriptor Distance Ratio|<span style= "color:green">&#x2713;</span> Done|
+| MP.7 Performance Evaluation 1|<span style= "color:green">&#x2713;</span> Done|
+| MP.8 Performance Evaluation 2|<span style= "color:green">&#x2713;</span> Done|
+| MP.9 Performance Evaluation 3|<span style= "color:green">&#x2713;</span> Done|
+
+
+#### MP.7 Performance Evaluation 1
+|Detector|Average number of Keypoints|Average Time (ms)|
+|---|---|---|
+|SHITOMASI|117.9|8.52|
+|HARRIS|24.8|8.53|
+|FAST|149.1|0.91|
+|BRISK|276.2|65.88|
+|ORB|116.1|7.99|
+|AKAZE|167|56.21|
+|SIFT|138.6|80.18|
+
+#### MP.8 Performance Evaluation 2
+|Detector/Descriptor|Avg. # of Keypoints in ROI|Avg. # of Keypoints|
+|---|---|---|---|---|---|---|
+|**SHITOMASI**|
+|**_** + BRISK |117.9|1342.3|
+|**_** + BRIEF |117.9|1342.3|
+|**_** + ORB |117.9|1342.3|
+|**_** + FREAK |117.9|1342.3|
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+|**HARRIS**|
+|**_** + BRISK |24.8|173.7|
+|**_** + BRIEF |24.8|173.7|
+|**_** + ORB |24.8|173.7|
+|**_** + FREAK |24.8|173.7|
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+|**FAST**|
+|**_** + BRISK |149.1|1787.4|
+|**_** + BRIEF |149.1|1787.4|
+|**_** + ORB |149.1|1787.4|
+|**_** + FREAK |149.1|1787.4|
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+|**BRISK**|
+|**_** + BRISK |276.2|2711.6|
+|**_** + BRIEF |276.2|2711.6|
+|**_** + ORB |276.2|2711.6|
+|**_** + FREAK |276.2|2711.6|
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+|**ORB**|
+|**_** + BRISK |116.1|500
+|**_** + BRIEF |116.1|500
+|**_** + ORB |116.1|500
+|**_** + FREAK |116.1|500
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+|**AKAZE**|
+|**_** + BRISK |167|1342.9|
+|**_** + BRIEF |167|1342.9|
+|**_** + ORB |167|1342.9|
+|**_** + FREAK |167|1342.9|
+|**_** + AKAZE |167|1342.9|
+|**_** + SIFT |N/A|N/A|
+|**SIFT**|
+|**_** + BRISK |138.6|1385.9|
+|**_** + BRIEF |138.6|1385.9|
+|**_** + ORB |N/A|N/A|
+|**_** + FREAK |138.6|1385.9|
+|**_** + AKAZE |N/A|N/A|
+|**_** + SIFT |N/A|N/A|
+
+
+
+#### MP.9 Performance Evaluation 3 
+##### Average Processing (Detection + Extraction) Time (ms)
+|Detector/Descriptor|BRISK|BRIEF|ORB|FREAK|AKAZE|SIFT|
+|---|---|---|---|---|---|---|
+|SHITOMASI|11.491|12.567|10.375|29.437|N/A|N/A|
+|HARRIS|9.898|9.927|8.940|30.539|N/A|N/A|
+|FAST|2.836|1.511|1.689|23.4052|N/A|N/A|
+|BRISK|35.436|34.828|39.396|59.331|N/A|N/A|
+|ORB|8.270|6.851|9.824|26.088|N/A|N/A|
+|AKAZE|65.654|75.381|68.722|79.432|123.847|N/A|
+|SIFT|85.498|79.344|N/A|95.240|N/A|N/A|
+
+If the TOP 3 detector + descriptor combination has to be selected, the FAST detector can be selected because of its speed. Despite its speed, it can detect a high number of key points. Meanwhile, HARRIS detector seems to be fast enough, but its detection ability is too low. Therefore, after FAST, the ORB detector can be selected with the BRIEF or BRISK identifier.
+
+|TOP3|
+|-|
+|FAST+BRIEF|
+|FAST+ORB|
+|FAST+BRISK|
 
 
 ## Previous README
